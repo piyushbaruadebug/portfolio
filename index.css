@@ -8,7 +8,7 @@
     --primary-color: #6c6c6c;
     --secondary-color: #17215c;
     --dark-bg: #0f172a;
-    --light-bg: #f8fafc;
+    --light-bg: #a9bdc6;
     --text-color: #041127;
     --text-light: #09090a;
     --border-color: #e2e8f0;
@@ -18,7 +18,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: #8d82af;
+    background-color: #655b83;
 }
 
 a {
@@ -190,6 +190,174 @@ a {
     margin: 0 auto;
 }
 
+/* Education Section */
+.education-section {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, rgba(108, 108, 108, 0.1), rgba(23, 33, 92, 0.1));
+    border-radius: 12px;
+    border: 2px solid rgba(108, 108, 108, 0.2);
+}
+
+.education-section h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.education-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.education-timeline {
+    position: relative;
+    padding: 1rem 0;
+}
+
+.education-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.education-item {
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    position: relative;
+}
+
+.education-item:nth-child(even) {
+    direction: rtl;
+}
+
+.education-item:nth-child(even) > * {
+    direction: ltr;
+}
+
+.education-year {
+    text-align: right;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    padding-right: 2rem;
+    position: relative;
+}
+
+.education-item:nth-child(even) .education-year {
+    text-align: left;
+    padding-right: 0;
+    padding-left: 2rem;
+}
+
+.education-year::after {
+    content: '';
+    position: absolute;
+    right: -1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background: white;
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(108, 108, 108, 0.1);
+}
+
+.education-item:nth-child(even) .education-year::after {
+    left: -1.5rem;
+    right: auto;
+}
+
+.education-content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.education-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-left-color: var(--secondary-color);
+}
+
+.education-content h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.education-content p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Responsive Design for Education */
+@media (max-width: 768px) {
+    .education-timeline::before {
+        display: none;
+    }
+
+    .education-item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .education-item:nth-child(even) {
+        direction: ltr;
+    }
+
+    .education-year {
+        text-align: left;
+        padding-right: 0;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--primary-color);
+    }
+
+    .education-item:nth-child(even) .education-year {
+        text-align: left;
+        padding-left: 0;
+    }
+
+    .education-year::after {
+        display: none;
+    }
+
+    .education-content {
+        border-left: none;
+        border-top: 3px solid var(--primary-color);
+    }
+
+    .education-section {
+        padding: 2rem 1rem;
+        margin: 2rem 1rem;
+    }
+}
+
 /* Skills Section */
 .skills {
     padding: 5rem 2rem;
@@ -258,7 +426,7 @@ a {
 }
 
 .project-card {
-    background-color: white;
+    background-color: rgb(235, 235, 235);
     padding: 2rem;
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
