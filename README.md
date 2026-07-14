@@ -20,19 +20,14 @@ Portfolio/
 │── index.html
 │── style.css
 │── script.js
-│── assets/
-│   ├── images/
-│   ├── icons/
+│── profile.jpeg
 │── README.md
 ```
 
 
 
 ## 🌐 Live Demo
-
-Add your deployed portfolio link here:
-
-**https://piyushbaruadeburg-portfolio-link.com**
+: https://piyushbaruadebug.github.io/portfolio/
 
 
 ## 📬 Contact
