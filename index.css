@@ -58,7 +58,7 @@ a {
     gap: 0.75rem;
     cursor: pointer;
     transition: transform 0.3s ease;
-    margin-left: -50px;
+    margin-left: -30px;
 }
 
 .logo:hover {
@@ -107,7 +107,7 @@ a {
 .menu-icon {
     line-height: 1;
     font-weight: 700;
-    margin-left:140px;
+    margin-left:110px;
 }
 
 .nav-menu {
