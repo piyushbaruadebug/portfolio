@@ -35,7 +35,7 @@ Portfolio/
 **Piyush Barua**
 
 - 📧 Email: piyushbarua9@gmail.com
-- 💼 LinkedIn: https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav
+- 💼 LinkedIn: https://www.linkedin.com/in/piyush-barua-6aa983327/
 - 🐙 GitHub: https://github.com/piyushbaruadebug
 
 ---
