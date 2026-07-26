@@ -34,9 +34,9 @@ Portfolio/
 
 **Piyush Barua**
 
-- 📧 Email: your-email@example.com
-- 💼 LinkedIn: https://linkedin.com/in/your-profile
-- 🐙 GitHub: https://github.com/your-username
+- 📧 Email: piyushbarua9@gmail.com
+- 💼 LinkedIn: https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav
+- 🐙 GitHub: https://github.com/piyushbaruadebug
 
 ---
 
