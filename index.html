@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <title>Piyush Barua — Full Stack Developer & Cybersecurity</title>
   <meta name="description" content="Piyush Barua is a Full Stack Developer, Web Designer, and Cybersecurity student at GNIT crafting high-performance web applications and security tools." />
   <meta name="theme-color" content="#0a0a0a" />
@@ -876,8 +879,8 @@
     }
     @media (max-width: 640px) {
       .poster-line {
-        font-size: clamp(1.75rem, 9.6vw, 3.4rem);
-        letter-spacing: -0.02em;
+        font-size: clamp(1.6rem, 8.8vw, 3.1rem);
+        letter-spacing: -0.03em;
         line-height: 0.95;
       }
     }
@@ -895,6 +898,13 @@
       left: 2%;
       width: clamp(2rem, 5vw, 4.5rem);
     }
+    @media (max-width: 640px) {
+      .hero-star-deco.star-left {
+        top: -0.25rem;
+        left: 1%;
+        width: 2.25rem;
+      }
+    }
     @media (min-width: 1024px) {
       .hero-star-deco.star-left {
         left: 5%;
@@ -906,6 +916,13 @@
       right: 3%;
       width: clamp(1.75rem, 4.5vw, 3.75rem);
       animation-delay: -3s;
+    }
+    @media (max-width: 640px) {
+      .hero-star-deco.spark-right {
+        bottom: 0.75rem;
+        right: 1.5%;
+        width: 1.75rem;
+      }
     }
     @media (min-width: 1024px) {
       .hero-star-deco.spark-right {
@@ -945,12 +962,12 @@
     }
     @media (max-width: 640px) {
       .hero-portrait-card {
-        width: min(220px, 58vw);
-        max-height: 48vh;
+        width: min(200px, 54vw);
+        max-height: 44vh;
         border-radius: 1.25rem;
         box-shadow: 
-          0 20px 50px -10px rgba(160, 20, 30, 0.35),
-          0 12px 30px -6px rgba(0, 0, 0, 0.45);
+          0 18px 45px -8px rgba(160, 20, 30, 0.35),
+          0 10px 25px -6px rgba(0, 0, 0, 0.45);
       }
     }
     .hero-portrait-card:hover {
