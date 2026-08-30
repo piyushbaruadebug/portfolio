@@ -9,6 +9,8 @@
   <title>Piyush Barua — Full Stack Developer & Cybersecurity</title>
   <meta name="description" content="Piyush Barua is a Full Stack Developer, Web Designer, and Cybersecurity student at GNIT crafting high-performance web applications and security tools." />
   <meta name="theme-color" content="#0a0a0a" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
@@ -331,9 +333,10 @@
     .loader-brand-row {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      font-weight: 600;
+      gap: 0.6rem;
+      font-weight: 800;
       font-size: 1.5rem;
+      letter-spacing: -0.025em;
       white-space: nowrap;
     }
     @media (min-width: 640px) {
@@ -425,34 +428,43 @@
     .header-brand {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      font-size: 1.125rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
+      gap: 0.6rem;
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
       cursor: pointer;
       white-space: nowrap;
       flex-shrink: 0;
+      color: var(--foreground);
     }
     @media (max-width: 640px) {
       .header-brand {
-        font-size: 0.95rem;
-        gap: 0.35rem;
+        font-size: 1rem;
+        gap: 0.45rem;
       }
     }
     .header-brand-spring {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.5rem;
       white-space: nowrap;
       transition: transform 0.35s var(--spring-snappy);
     }
     .header-brand:hover .header-brand-spring {
-      transform: scale(1.04);
+      transform: scale(1.03);
     }
-    .header-brand svg {
-      color: var(--accent);
-      width: 1.15rem;
-      height: 1.15rem;
+    .brand-pb-badge {
+      width: 1.45rem;
+      height: 1.45rem;
+      flex-shrink: 0;
+      border-radius: 7px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(177, 95, 44, 0.25);
+      transition: transform 0.35s var(--spring-snappy), box-shadow 0.35s var(--spring-snappy);
+    }
+    .header-brand:hover .brand-pb-badge {
+      transform: rotate(6deg) scale(1.08);
+      box-shadow: 0 4px 14px rgba(177, 95, 44, 0.4);
     }
 
     .primary-nav {
@@ -1758,9 +1770,10 @@
     .footer-brand-title {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      font-size: 1.125rem;
-      font-weight: 600;
+      gap: 0.55rem;
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
     }
     .footer-brand-title svg {
       width: 1.25rem;
@@ -1866,9 +1879,10 @@
     .nav-menu-brand {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      font-size: 1.125rem;
-      font-weight: 600;
+      gap: 0.55rem;
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
     }
     .nav-menu-brand svg {
       width: 1.25rem;
@@ -2206,8 +2220,9 @@
   <div id="page-loader" aria-hidden="true">
     <div class="loader-center-content">
       <div class="loader-brand-row">
-        <svg viewBox="0 0 48 48" fill="currentColor">
-          <path d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z"/>
+        <svg viewBox="0 0 32 32" class="loader-pb-badge" width="2.25rem" height="2.25rem" aria-hidden="true" style="border-radius: 8px; flex-shrink: 0;">
+          <rect width="32" height="32" rx="7.5" fill="var(--accent-from, #cf8047)"/>
+          <text x="16" y="21.5" font-family="'Onest', -apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="-0.3px">PB</text>
         </svg>
         <span>Piyush Barua</span>
       </div>
@@ -2232,8 +2247,9 @@
       <!-- Left: Brand -->
       <button type="button" class="header-brand" id="brand-btn" aria-label="Piyush Barua Home">
         <span class="header-brand-spring">
-          <svg viewBox="0 0 48 48" width="1.25rem" height="1.25rem" fill="currentColor">
-            <path d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z"/>
+          <svg viewBox="0 0 32 32" class="brand-pb-badge" aria-hidden="true">
+            <rect width="32" height="32" rx="7.5" fill="var(--accent, #b15f2c)"/>
+            <text x="16" y="21.5" font-family="'Onest', -apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="-0.3px">PB</text>
           </svg>
           <span>Piyush Barua</span>
         </span>
@@ -2473,7 +2489,7 @@
                 <div class="portfolio-card-watermark">
                   <div class="portfolio-watermark-wrap">
                     <svg viewBox="0 0 48 48" fill="currentColor">
-                      <path d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z"/>
+                      <path d="M24 3C24 14.6 33.4 24 45 24C33.4 24 24 33.4 24 45C24 33.4 14.6 24 3 24C14.6 24 24 14.6 24 3Z"/>
                     </svg>
                     <span class="portfolio-watermark-r">®</span>
                   </div>
@@ -2509,7 +2525,7 @@
                 <div class="portfolio-card-watermark">
                   <div class="portfolio-watermark-wrap">
                     <svg viewBox="0 0 48 48" fill="currentColor">
-                      <path d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z"/>
+                      <path d="M24 3C24 14.6 33.4 24 45 24C33.4 24 24 33.4 24 45C24 33.4 14.6 24 3 24C14.6 24 24 14.6 24 3Z"/>
                     </svg>
                     <span class="portfolio-watermark-r">®</span>
                   </div>
@@ -2544,7 +2560,7 @@
                 <div class="portfolio-card-watermark">
                   <div class="portfolio-watermark-wrap">
                     <svg viewBox="0 0 48 48" fill="currentColor">
-                      <path d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z"/>
+                      <path d="M24 3C24 14.6 33.4 24 45 24C33.4 24 24 33.4 24 45C24 33.4 14.6 24 3 24C14.6 24 24 14.6 24 3Z"/>
                     </svg>
                     <span class="portfolio-watermark-r">®</span>
                   </div>
@@ -2579,7 +2595,7 @@
                 <div class="portfolio-card-watermark">
                   <div class="portfolio-watermark-wrap">
                     <svg viewBox="0 0 48 48" fill="currentColor">
-                      <path d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z"/>
+                      <path d="M24 3C24 14.6 33.4 24 45 24C33.4 24 24 33.4 24 45C24 33.4 14.6 24 3 24C14.6 24 24 14.6 24 3Z"/>
                     </svg>
                     <span class="portfolio-watermark-r">®</span>
                   </div>
@@ -2614,7 +2630,7 @@
                 <div class="portfolio-card-watermark">
                   <div class="portfolio-watermark-wrap">
                     <svg viewBox="0 0 48 48" fill="currentColor">
-                      <path d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z"/>
+                      <path d="M24 3C24 14.6 33.4 24 45 24C33.4 24 24 33.4 24 45C24 33.4 14.6 24 3 24C14.6 24 24 14.6 24 3Z"/>
                     </svg>
                     <span class="portfolio-watermark-r">®</span>
                   </div>
@@ -2649,7 +2665,7 @@
                 <div class="portfolio-card-watermark">
                   <div class="portfolio-watermark-wrap">
                     <svg viewBox="0 0 48 48" fill="currentColor">
-                      <path d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z"/>
+                      <path d="M24 3C24 14.6 33.4 24 45 24C33.4 24 24 33.4 24 45C24 33.4 14.6 24 3 24C14.6 24 24 14.6 24 3Z"/>
                     </svg>
                     <span class="portfolio-watermark-r">®</span>
                   </div>
@@ -2825,8 +2841,9 @@
         <!-- Brand Col -->
         <div class="footer-brand-col">
           <div class="footer-brand-title">
-            <svg viewBox="0 0 48 48" fill="currentColor">
-              <path d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z"/>
+            <svg viewBox="0 0 32 32" width="1.35rem" height="1.35rem" aria-hidden="true" style="border-radius: 7px; flex-shrink: 0;">
+              <rect width="32" height="32" rx="7.5" fill="var(--accent, #b15f2c)"/>
+              <text x="16" y="21.5" font-family="'Onest', -apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="-0.3px">PB</text>
             </svg>
             <span>Piyush Barua</span>
           </div>
@@ -2884,8 +2901,9 @@
   <div id="nav-menu" role="dialog" aria-modal="true" aria-label="Site Navigation">
     <div class="nav-menu-top">
       <div class="nav-menu-brand">
-        <svg viewBox="0 0 48 48" fill="currentColor">
-          <path d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z"/>
+        <svg viewBox="0 0 32 32" width="1.35rem" height="1.35rem" aria-hidden="true" style="border-radius: 7px; flex-shrink: 0;">
+          <rect width="32" height="32" rx="7.5" fill="var(--accent-from, #cf8047)"/>
+          <text x="16" y="21.5" font-family="'Onest', -apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="-0.3px">PB</text>
         </svg>
         <span>Piyush Barua</span>
       </div>
@@ -2999,7 +3017,7 @@
       <div class="modal-success-state" id="modal-success-wrap">
         <div class="modal-success-badge">
           <svg viewBox="0 0 48 48" fill="currentColor">
-            <path d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z"/>
+            <path d="M24 3C24 14.6 33.4 24 45 24C33.4 24 24 33.4 24 45C24 33.4 14.6 24 3 24C14.6 24 24 14.6 24 3Z"/>
           </svg>
         </div>
         <h2 class="modal-success-h2">Message Dispatched</h2>

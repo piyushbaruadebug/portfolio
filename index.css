@@ -363,9 +363,10 @@ img {
 .loader-brand {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-weight: 600;
+  gap: 0.6rem;
+  font-weight: 800;
   font-size: 1.5rem;
+  letter-spacing: -0.025em;
 }
 @media (min-width: 640px) {
   .loader-brand { font-size: 1.875rem; }
@@ -457,10 +458,10 @@ header.is-ready {
 .header-brand {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  gap: 0.6rem;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
   color: #111111;
   cursor: pointer;
 }
@@ -472,12 +473,23 @@ header.is-ready {
 }
 @media (hover: hover) and (pointer: fine) {
   .header-brand:hover .header-brand-spring {
-    transform: scale(1.04);
+    transform: scale(1.03);
   }
 }
-.header-brand svg {
-  color: #a855f7;
-  font-size: 1.25rem;
+.brand-pb-badge {
+  width: 1.45rem;
+  height: 1.45rem;
+  flex-shrink: 0;
+  border-radius: 7px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(177, 95, 44, 0.25);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .header-brand:hover .brand-pb-badge {
+    transform: rotate(6deg) scale(1.08);
+    box-shadow: 0 4px 14px rgba(177, 95, 44, 0.4);
+  }
 }
 
 .primary-nav {
@@ -1757,15 +1769,16 @@ footer {
 }
 
 .footer-brand-title {
-  font-size: 1.125rem;
-  font-weight: 600;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.55rem;
 }
 .footer-brand-title svg {
   font-size: 1.25rem;
-  color: var(--accent-from);
+  color: var(--accent);
 }
 .footer-brand-tagline {
   margin-top: 1rem;
@@ -1859,9 +1872,10 @@ footer {
 .nav-menu-brand {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 1.125rem;
-  font-weight: 600;
+  gap: 0.55rem;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
 }
 .nav-menu-brand svg {
   font-size: 1.25rem;
