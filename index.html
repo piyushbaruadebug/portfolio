@@ -1503,6 +1503,12 @@
       border-color: rgba(177, 95, 44, 0.32);
       background: linear-gradient(145deg, rgba(177, 95, 44, 0.09) 0%, rgba(255, 255, 255, 0.03) 60%);
     }
+    @media (min-width: 1200px) {
+      .tools-card.featured-ai,
+      .tools-card.span-2 {
+        grid-column: span 2;
+      }
+    }
 
     .tools-card-top {
       display: flex;
@@ -2931,6 +2937,22 @@
             <div class="tools-pills-wrap">
               <span class="tech-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>SQLite</span>
               <span class="tech-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v4H4zM4 10h16v4H4zM4 16h16v4H4z"/></svg>SQL</span>
+            </div>
+          </div>
+
+          <!-- 7. Automation & Integration -->
+          <div class="tools-card span-2 fade-up-reveal" style="--reveal-y: 20px; transition-delay: 280ms;">
+            <div class="tools-card-top">
+              <div class="tools-card-title-group">
+                <div class="tools-card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7M11 18H8a2 2 0 0 1-2-2V9"/><circle cx="12" cy="12" r="2"/></svg>
+                </div>
+                <h3 class="tools-card-name">Automation & Integration</h3>
+              </div>
+              <span class="tools-card-count">1 Technology</span>
+            </div>
+            <div class="tools-pills-wrap">
+              <span class="tech-pill highlight-accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 9l3 3-3 3M13 15h3M4 4h16v16H4z"/></svg>APIs</span>
             </div>
           </div>
         </div>

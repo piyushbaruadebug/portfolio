@@ -1566,6 +1566,12 @@ header.is-ready {
   border-color: rgba(177, 95, 44, 0.32);
   background: linear-gradient(145deg, rgba(177, 95, 44, 0.09) 0%, rgba(255, 255, 255, 0.03) 60%);
 }
+@media (min-width: 1200px) {
+  .tools-card.featured-ai,
+  .tools-card.span-2 {
+    grid-column: span 2;
+  }
+}
 
 .tools-card-top {
   display: flex;
