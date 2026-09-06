@@ -1,0 +1,186 @@
+@charset "UTF-8";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ----------------------------------------------------
+   CINEMATIC SHORT-FILM DESIGN SYSTEM & TOKENS
+   PIYUSH BARUA — MMXXVI
+---------------------------------------------------- */
+
+:root {
+  --color-void: #020202;
+  --color-abyss: #080808;
+  --color-surface: #101010;
+  --color-surface-hover: #181818;
+  --color-line: rgba(255, 255, 255, 0.08);
+  --color-line-bold: rgba(255, 255, 255, 0.18);
+  --color-text: #f0f0f0;
+  --color-muted: #888888;
+  --color-dim: #444444;
+  --color-red: #e50914;
+  --color-crimson: #9e0e15;
+  --color-blood: #5e0509;
+  --color-red-glow: rgba(229, 9, 20, 0.4);
+
+  --font-cinema: 'Anton', 'Syne', sans-serif;
+  --font-display: 'Syne', -apple-system, sans-serif;
+  --font-editorial: 'Oswald', sans-serif;
+  --font-body: 'Onest', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --ease-film: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-cut: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  background-color: var(--color-void);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: auto !important;
+  overflow-x: hidden;
+}
+
+@media (max-width: 1600px) { html { font-size: 15px; } }
+@media (max-width: 1280px) { html { font-size: 14.5px; } }
+@media (max-width: 1024px) { html { font-size: 14px; } }
+@media (max-width: 768px)  { html { font-size: 13.5px; } }
+@media (max-width: 480px)  { html { font-size: 13px; } }
+
+body {
+  background-color: var(--color-void);
+  color: var(--color-text);
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.4;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Typography Utility Classes */
+.font-cinema {
+  font-family: var(--font-cinema);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.85;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.font-editorial {
+  font-family: var(--font-editorial);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+  letter-spacing: -0.01em;
+}
+
+/* High Contrast Selection */
+::selection {
+  background: var(--color-red);
+  color: #ffffff;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-red);
+}
+
+/* Links & Buttons Reset */
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Anamorphic Scope Framing (Letterbox) */
+.cinema-scope-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 990;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cinema-scope-bar {
+  width: 100%;
+  height: clamp(12px, 2.5vw, 32px);
+  background-color: #000000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cinema-scope-bar.bottom {
+  border-bottom: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Film Grain Overlay */
+.film-grain {
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  z-index: 980;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  animation: grainShift 0.2s steps(2) infinite;
+}
+
+@keyframes grainShift {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-3%, -2%); }
+  50% { transform: translate(2%, 3%); }
+  75% { transform: translate(-1%, 2%); }
+  100% { transform: translate(3%, -1%); }
+}
+
+/* Vignette Effect - Light & Atmospheric */
+.cinema-vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 970;
+  background: radial-gradient(circle at center, transparent 75%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+/* Scanlines Effect - Disabled for ultra-sharp 4K clarity */
+.cinema-scanlines {
+  display: none;
+}

@@ -1,18 +1,31 @@
-# macOS
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production & Build Output
+dist/
+dist-ssr/
+*.local
+
+# Cache & Temp
+.vite/
+.temp/
+*.log
+
+# Environment Variables
+.env
+.env.local
+.env.production
+.env.development
+
+# Editor & OS
 .DS_Store
 .AppleDouble
 .LSOverride
-
-# Thumbnails
 ._*
 Thumbs.db
-
-# Editors & IDEs
 .vscode/
 .idea/
 *.swp
 *.swo
-
-# Temporary & Build files
-*.log
-.temp/
