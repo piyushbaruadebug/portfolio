@@ -49,14 +49,14 @@ export const FinaleScene: React.FC<FinaleSceneProps> = ({ onResetScene }) => {
             <span className="font-mono text-xs text-red-500 uppercase tracking-widest block mb-2">
               INITIATE TRANSMISSION
             </span>
-            <h3 className="font-display text-2xl md:text-3xl text-white mb-2">
-              {`"Want me?"`}
+            <h3 className="font-display text-xl sm:text-2xl md:text-3xl text-white mb-3 leading-snug max-w-xl">
+              Every great story starts with an idea. Maybe ours starts with a message.
+              <br className="hidden sm:block" />
+              {' '}Let’s create something unforgettable.
             </h3>
-            <div className="font-body text-sm text-neutral-400 max-w-xl leading-relaxed mt-2 space-y-1">
-              <p>Every great story starts with an idea. Maybe ours starts with a message.</p>
-              <p>Let’s create something unforgettable. 🎬</p>
-              <p className="text-neutral-300 font-medium pt-0.5">— Get in touch with me.</p>
-            </div>
+            <p className="font-body text-sm text-neutral-400 max-w-xl">
+              — Get in touch with me.
+            </p>
           </div>
 
           <div className="flex flex-col items-start sm:items-start gap-3.5">
