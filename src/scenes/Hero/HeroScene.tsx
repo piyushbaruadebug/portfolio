@@ -123,18 +123,19 @@ export const HeroScene: React.FC = () => {
         { scale: 1, opacity: 0.78, duration: 1.2, ease: 'power2.out' }
       );
 
-      // 2. SCROLL REVEAL: When user scrolls down, smoothly elevate and dissolve subject
+      // 2. SCROLL REVEAL: When user scrolls down/swipes up, slide picture LEFT to reveal the full name!
       if (containerRef.current && subjectRef.current) {
         gsap.to(subjectRef.current, {
           scrollTrigger: {
             trigger: containerRef.current,
             start: 'top top',
-            end: '40% top',
-            scrub: 0.2,
+            end: '50% top',
+            scrub: 0.5,
+            invalidateOnRefresh: true,
           },
-          y: -50,
-          scale: 0.9,
-          opacity: 0,
+          x: () => -window.innerWidth * 0.65,
+          scale: 0.85,
+          opacity: 0.25,
           ease: 'power1.out',
         });
 
