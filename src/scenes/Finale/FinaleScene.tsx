@@ -28,7 +28,7 @@ export const FinaleScene: React.FC<FinaleSceneProps> = ({ onResetScene }) => {
           </h2>
 
           <p className="font-mono text-xs sm:text-sm text-neutral-300 tracking-[0.18em] uppercase mb-2">
-            {`"I'm gonna make an offer you can't refuse."`}
+            {`"I did it for me. I liked it. I was good at it."`}
           </p>
 
           <div className="flex items-center gap-4 sm:gap-6 font-mono text-xs sm:text-sm tracking-[0.2em] uppercase text-neutral-400">
@@ -52,6 +52,11 @@ export const FinaleScene: React.FC<FinaleSceneProps> = ({ onResetScene }) => {
             <h3 className="font-display text-2xl md:text-3xl text-white mb-2">
               {`"Want me?"`}
             </h3>
+            <div className="font-body text-sm text-neutral-400 max-w-xl leading-relaxed mt-2 space-y-1">
+              <p>Every great story starts with an idea. Maybe ours starts with a message.</p>
+              <p>Let’s create something unforgettable. 🎬</p>
+              <p className="text-neutral-300 font-medium pt-0.5">— Get in touch with me.</p>
+            </div>
           </div>
 
           <div className="flex flex-col items-start sm:items-start gap-3.5">
