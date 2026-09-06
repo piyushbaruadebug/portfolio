@@ -279,7 +279,7 @@ export const HeroScene: React.FC = () => {
           </h2>
 
           <p className="font-mono text-xs sm:text-sm text-neutral-300 tracking-[0.18em] uppercase mb-2">
-            FULL STACK ENGINEERING · CYBER DEFENSE AT GNIT
+            BASIC FULL STACK · CYBER SECURITY FROM GNIT
           </p>
 
           <div className="flex items-center gap-4 sm:gap-6 font-mono text-xs sm:text-sm tracking-[0.2em] uppercase text-neutral-400">
