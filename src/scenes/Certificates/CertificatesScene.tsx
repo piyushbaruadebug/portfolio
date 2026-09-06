@@ -336,8 +336,7 @@ export const CertificatesScene: React.FC = () => {
                   {/* Card Header Spec */}
                   <div>
                     <div className="flex items-center justify-between text-[11px] font-mono tracking-wider text-red-400 border-b border-red-900/40 pb-2 mb-3">
-                      <span className="text-red-400/90 font-medium tracking-widest uppercase flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+                      <span className="text-red-400/90 font-medium tracking-widest uppercase flex items-center">
                         {cert.issuer}
                       </span>
                       <span className="text-neutral-400 font-mono text-[10px]">
