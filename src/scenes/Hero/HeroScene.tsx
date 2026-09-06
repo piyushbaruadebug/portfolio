@@ -110,6 +110,7 @@ export const HeroScene: React.FC = () => {
   const textTopRef = useRef<HTMLHeadingElement>(null);
   const textBotRef = useRef<HTMLHeadingElement>(null);
   const subjectRef = useRef<HTMLDivElement>(null);
+  const subjectImgRef = useRef<HTMLImageElement>(null);
   const studioLightRef = useRef<HTMLDivElement>(null);
   const aboutSectionRef = useRef<HTMLDivElement>(null);
 
@@ -122,7 +123,7 @@ export const HeroScene: React.FC = () => {
         { scale: 1, opacity: 0.78, duration: 1.2, ease: 'power2.out' }
       );
 
-      // 2. SCROLL REVEAL: When user scrolls down, slide picture LEFT fast to reveal the name!
+      // 2. SCROLL REVEAL: When user scrolls down, smoothly elevate and dissolve subject
       if (containerRef.current && subjectRef.current) {
         gsap.to(subjectRef.current, {
           scrollTrigger: {
@@ -131,9 +132,9 @@ export const HeroScene: React.FC = () => {
             end: '40% top',
             scrub: 0.2,
           },
-          x: -window.innerWidth * 0.75,
-          scale: 0.85,
-          opacity: 0.2,
+          y: -50,
+          scale: 0.9,
+          opacity: 0,
           ease: 'power1.out',
         });
 
@@ -174,14 +175,14 @@ export const HeroScene: React.FC = () => {
       }
     }, containerRef);
 
-    // Subtle 3D mouse parallax on portrait
+    // Subtle 3D mouse parallax on portrait (applied to inner img to never displace the centered wrapper)
     const handleMouseMove = (e: MouseEvent) => {
       const { innerWidth, innerHeight } = window;
       const x = (e.clientX / innerWidth - 0.5) * 15;
       const y = (e.clientY / innerHeight - 0.5) * 10;
 
-      if (subjectRef.current) {
-        gsap.to(subjectRef.current, { x: -x, y: -y, duration: 0.8, ease: 'power2.out' });
+      if (subjectImgRef.current) {
+        gsap.to(subjectImgRef.current, { x: -x, y: -y, duration: 0.8, ease: 'power2.out' });
       }
     };
 
@@ -240,6 +241,7 @@ export const HeroScene: React.FC = () => {
         {/* Foreground Subject Figure with Clean Lighting */}
         <div ref={subjectRef} className="hero-subject-wrap" style={{ zIndex: 5 }}>
           <img
+            ref={subjectImgRef}
             src="/hero.jpg"
             alt="Piyush Barua — Cinematic Subject"
             className="hero-subject-img"

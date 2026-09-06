@@ -217,8 +217,12 @@
 .hero-subject-wrap {
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  max-width: 100%;
   height: 85vh;
   max-height: 950px;
   z-index: 5;
@@ -231,6 +235,7 @@
 
 .hero-subject-img {
   height: 100%;
+  max-width: 92vw;
   width: auto;
   object-fit: contain;
   opacity: 0.78;
