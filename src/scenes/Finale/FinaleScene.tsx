@@ -52,9 +52,6 @@ export const FinaleScene: React.FC<FinaleSceneProps> = ({ onResetScene }) => {
             <h3 className="font-display text-2xl md:text-3xl text-white mb-2">
               Ready to architect something extraordinary?
             </h3>
-            <p className="font-body text-sm text-neutral-400 max-w-xl">
-              Available for full stack engineering roles, cybersecurity research collaborations, and ambitious digital ventures.
-            </p>
           </div>
 
           <div className="flex flex-col items-start sm:items-start gap-3.5">
