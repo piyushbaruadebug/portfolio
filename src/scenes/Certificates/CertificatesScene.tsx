@@ -274,16 +274,6 @@ export const CertificatesScene: React.FC = () => {
             </div>
           </div>
 
-          <div className="hidden xl:flex flex-col justify-start absolute right-0 top-12 bottom-12 z-20 pointer-events-none text-right">
-            <div className="font-mono">
-              <span className="text-[10px] text-neutral-400 tracking-[0.25em] block leading-relaxed uppercase">
-                SWIPE<br />
-                EXPLORE<br />
-                INTERACT
-              </span>
-              <div className="w-6 h-[1px] bg-red-600/70 ml-auto mt-3" />
-            </div>
-          </div>
 
           {/* Glowing Concentric Floor Rings (Reflective Stage Floor) */}
           <div className="cert-floor-container">
