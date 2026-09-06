@@ -28,7 +28,7 @@ export const FinaleScene: React.FC<FinaleSceneProps> = ({ onResetScene }) => {
           </h2>
 
           <p className="font-mono text-xs sm:text-sm text-neutral-300 tracking-[0.18em] uppercase mb-2">
-            CODE IS ARCHITECTURE · SECURITY IS RESILIENCE · CURTAIN CALL
+            {`"I'm gonna make an offer you can't refuse."`}
           </p>
 
           <div className="flex items-center gap-4 sm:gap-6 font-mono text-xs sm:text-sm tracking-[0.2em] uppercase text-neutral-400">
@@ -50,7 +50,7 @@ export const FinaleScene: React.FC<FinaleSceneProps> = ({ onResetScene }) => {
               INITIATE TRANSMISSION
             </span>
             <h3 className="font-display text-2xl md:text-3xl text-white mb-2">
-              Ready to architect something extraordinary?
+              {`"Want me?"`}
             </h3>
           </div>
 
