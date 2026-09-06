@@ -52,7 +52,7 @@ export const FinaleScene: React.FC<FinaleSceneProps> = ({ onResetScene }) => {
             <h3 className="font-display text-xl sm:text-2xl md:text-3xl text-white mb-3 leading-snug max-w-xl">
               Every great story starts with an idea. Maybe ours starts with a message.
               <br className="hidden sm:block" />
-              {' '}Let’s create something unforgettable.
+              {' '}Let’s create something.
             </h3>
             <p className="font-body text-sm text-neutral-400 max-w-xl">
               — Get in touch with me.
