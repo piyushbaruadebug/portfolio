@@ -195,7 +195,7 @@ export const FinaleScene: React.FC<FinaleSceneProps> = ({ onResetScene }) => {
         {/* Legal & Copyright */}
         <div className="pt-10 mt-10 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="font-mono text-[11px] text-neutral-600">
-            © 2026 PIYUSH BARUA. ALL RIGHTS RESERVED. CINEMATIC INTERACTIVE EDITION.
+            © 2026 PIYUSH BARUA. ALL RIGHTS RESERVED.
           </p>
         </div>
       </div>
