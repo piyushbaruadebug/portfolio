@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import gsap from 'gsap';
 import { ChronoClock } from './ChronoClock';
 import { TimelineYear } from '../../types';
-import { Calendar, Shield, Sparkles, CheckCircle2, ChevronRight, Terminal } from 'lucide-react';
+import { Calendar, CheckCircle2 } from 'lucide-react';
 
 const TIMELINE_DATA: TimelineYear[] = [
   {
@@ -18,8 +18,6 @@ const TIMELINE_DATA: TimelineYear[] = [
       'Learned object-oriented programming (OOP) principles and structures',
     ],
     techStack: ['Python', 'OOP', 'Logic Building', 'Class 10'],
-    status: 'ARCHIVED',
-    focus: 'Python, OOP & Class 10',
   },
   {
     year: '2022',
@@ -34,8 +32,6 @@ const TIMELINE_DATA: TimelineYear[] = [
       'Explored core AI concepts, algorithms, and intelligent systems',
     ],
     techStack: ['Class 10 ICSE', 'Artificial Intelligence', 'Machine Learning', 'Python'],
-    status: 'ARCHIVED',
-    focus: 'Class 10 Completion & AI Knowledge',
   },
   {
     year: '2023',
@@ -50,8 +46,6 @@ const TIMELINE_DATA: TimelineYear[] = [
       'Built frontend projects using HTML5, CSS3, and JavaScript',
     ],
     techStack: ['UI Design', 'Frontend Dev', 'HTML5', 'CSS3', 'JavaScript'],
-    status: 'ARCHIVED',
-    focus: 'UI & Frontend Web Development',
   },
   {
     year: '2024',
@@ -66,8 +60,6 @@ const TIMELINE_DATA: TimelineYear[] = [
       'Developed research tools for threat detection and posture auditing',
     ],
     techStack: ['Kali Linux', 'Wireshark', 'Metasploit', 'Nmap', 'Bash Scripting'],
-    status: 'ACTIVE',
-    focus: 'Threat Modeling & Network Security',
   },
   {
     year: '2025',
@@ -82,8 +74,6 @@ const TIMELINE_DATA: TimelineYear[] = [
       'Integrated LLM pipelines for automated threat triage and code review',
     ],
     techStack: ['Llama 3.3', 'Groq API', 'Computer Vision', 'Heuristics', 'Python ML'],
-    status: 'ACTIVE',
-    focus: 'AI-Powered Security & Automation',
   },
   {
     year: '2026',
@@ -98,34 +88,33 @@ const TIMELINE_DATA: TimelineYear[] = [
       'Building ultra-fast, hardened, production-grade applications',
     ],
     techStack: ['React', 'TypeScript', 'Three.js', 'GSAP', 'Vite', 'Tailwind'],
-    status: 'ACTIVE',
-    focus: 'Next-Gen Interactive & Fintech Systems',
   },
 ];
 
 export const TimeJourneyScene: React.FC = () => {
   const [activeYear, setActiveYear] = useState<string>('2026');
-  const containerRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
   const currentData =
     TIMELINE_DATA.find((t) => t.year === activeYear) || TIMELINE_DATA[TIMELINE_DATA.length - 1];
 
   const handleSelectYear = (year: string) => {
+    if (year === activeYear) return;
     setActiveYear(year);
     if (cardRef.current) {
+      gsap.killTweensOf(cardRef.current);
       gsap.fromTo(
         cardRef.current,
-        { opacity: 0, x: 30, filter: 'blur(8px)' },
-        { opacity: 1, x: 0, filter: 'blur(0px)', duration: 0.5, ease: 'power2.out' }
+        { opacity: 0, x: 20 },
+        { opacity: 1, x: 0, duration: 0.35, ease: 'power2.out', clearProps: 'transform,opacity' }
       );
     }
   };
 
   return (
-    <section id="chrono" ref={containerRef} className="scene-chrono">
+    <section id="chrono" className="scene-chrono">
       <div className="max-w-7xl mx-auto">
-        {/* Scene Header (Matching Scene 02 reference style) */}
+        {/* Scene Header */}
         <div className="mb-12 text-left">
           <div className="font-mono text-xs sm:text-sm text-white/90 tracking-[0.22em] uppercase font-normal mb-1">
             SCENE 04 // TEMPORAL MATRIX
@@ -139,14 +128,31 @@ export const TimeJourneyScene: React.FC = () => {
             ROTATE THE CLOCK TO NAVIGATE CHRONOLOGICAL ERAS (2021 — 2026)
           </p>
 
-          <div className="flex items-center gap-4 sm:gap-6 font-mono text-xs sm:text-sm tracking-[0.2em] uppercase text-neutral-400">
-            <span className="text-white font-semibold cursor-pointer">ALL ERAS</span>
-            <span className="hover:text-white cursor-pointer transition-colors">2021—2023</span>
-            <span className="hover:text-white cursor-pointer transition-colors">2024—2025</span>
-            <span className="hover:text-white cursor-pointer transition-colors">2026 CURRENT</span>
+          <div className="flex items-center flex-wrap gap-4 sm:gap-6 font-mono text-xs sm:text-sm tracking-[0.2em] uppercase">
+            {[
+              { label: 'ALL ERAS', year: '2021' },
+              { label: '2021—2023', year: '2023' },
+              { label: '2024—2025', year: '2025' },
+              { label: '2026 CURRENT', year: '2026' },
+            ].map((tab) => {
+              const isSelected =
+                (tab.label === '2026 CURRENT' && activeYear === '2026') ||
+                (tab.label === '2024—2025' && ['2024', '2025'].includes(activeYear)) ||
+                (tab.label === '2021—2023' && ['2021', '2022', '2023'].includes(activeYear));
+              return (
+                <button
+                  key={tab.label}
+                  type="button"
+                  onClick={() => handleSelectYear(tab.year)}
+                  className={`cursor-pointer transition-colors ${
+                    isSelected ? 'text-white font-semibold' : 'text-neutral-400 hover:text-white'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              );
+            })}
           </div>
-
-
         </div>
 
         {/* Interactive Chrono Dual Column */}

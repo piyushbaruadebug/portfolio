@@ -25,8 +25,8 @@ export interface TimelineYear {
   description: string;
   milestones: string[];
   techStack: string[];
-  status: 'ACTIVE' | 'ARCHIVED' | 'CLASSIFIED';
-  focus: string;
+  status?: 'ACTIVE' | 'ARCHIVED' | 'CLASSIFIED';
+  focus?: string;
 }
 
 export interface SkillNode {

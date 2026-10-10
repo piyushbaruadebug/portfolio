@@ -14,17 +14,17 @@ import { FloatingMusicWidget } from './components/FloatingMusicWidget';
 import './styles/index.css';
 import './styles/cinematic.css';
 
+const SCENE_IDS = ['hero', 'education', 'universe', 'chrono', 'certificates', 'projects', 'finale'] as const;
+
 export const App: React.FC = () => {
   const [currentScene, setCurrentScene] = useState<number>(1);
 
   // Active scene scroll tracker
   useEffect(() => {
-    const sceneIds = ['hero', 'education', 'universe', 'chrono', 'certificates', 'projects', 'finale'];
-
     const handleScroll = () => {
       const scrollPos = window.scrollY + window.innerHeight * 0.35;
-      for (let i = sceneIds.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sceneIds[i]);
+      for (let i = SCENE_IDS.length - 1; i >= 0; i--) {
+        const el = document.getElementById(SCENE_IDS[i]);
         if (el && el.offsetTop <= scrollPos) {
           setCurrentScene(i + 1);
           break;
@@ -39,8 +39,7 @@ export const App: React.FC = () => {
   }, []);
 
   const handleNavigateScene = (sceneIndex: number) => {
-    const sceneIds = ['hero', 'education', 'universe', 'chrono', 'certificates', 'projects', 'finale'];
-    const targetId = sceneIds[sceneIndex - 1];
+    const targetId = SCENE_IDS[sceneIndex - 1];
     if (targetId) {
       const targetEl = document.getElementById(targetId);
       if (targetEl) {

@@ -500,11 +500,13 @@
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  max-width: 520px;
+  max-width: 500px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  touch-action: none;
+  user-select: none;
 }
 
 .chrono-dial-svg {
@@ -512,6 +514,7 @@
   height: 100%;
   transform-origin: center;
   cursor: grab;
+  touch-action: none;
 }
 
 .chrono-dial-svg:active {
