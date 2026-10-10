@@ -349,6 +349,8 @@ export const CertificatesScene: React.FC = () => {
                       <img
                         src={cert.imageSrc}
                         alt={cert.title}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-contain rounded transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />

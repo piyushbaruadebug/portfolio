@@ -16,7 +16,7 @@ export const FloatingMusicWidget: React.FC<FloatingMusicWidgetProps> = ({
     const audio = new Audio(src);
     audio.loop = true;
     audio.volume = volume;
-    audio.preload = 'auto';
+    audio.preload = 'none';
     audioRef.current = audio;
 
     const handlePlay = () => setIsPlaying(true);
@@ -24,13 +24,6 @@ export const FloatingMusicWidget: React.FC<FloatingMusicWidgetProps> = ({
 
     audio.addEventListener('play', handlePlay);
     audio.addEventListener('pause', handlePause);
-
-    // Attempt autoplay immediately
-    audio.play().then(() => {
-      setIsPlaying(true);
-    }).catch(() => {
-      // Browser blocked autoplay without user gesture
-    });
 
     // Global first-interaction unlock
     const unlockAudio = () => {
@@ -43,7 +36,7 @@ export const FloatingMusicWidget: React.FC<FloatingMusicWidgetProps> = ({
     };
 
     const events = ['pointerdown', 'click', 'keydown', 'touchstart'];
-    events.forEach((evt) => window.addEventListener(evt, unlockAudio, { passive: true }));
+    events.forEach((evt) => window.addEventListener(evt, unlockAudio, { passive: true, once: true }));
 
     return () => {
       events.forEach((evt) => window.removeEventListener(evt, unlockAudio));
